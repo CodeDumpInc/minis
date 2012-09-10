@@ -1,5 +1,7 @@
 ''' Rabin-Miller prime number test'''
 
+'''things learned: python's pow() implements square & multiply :)'''
+
 import random
 
 k = 5
