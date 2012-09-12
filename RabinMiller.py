@@ -4,9 +4,9 @@
 
 import random
 
-k = 5
 
-def rm(n):
+
+def rm(n,k):
     if( n < 2 ):
         return False    
     if( n == 2 or n == 3):
@@ -32,14 +32,27 @@ def rm(n):
         return False
     return True
 
-found = False
-numBits = 256
+def getPrime(numBits, k):
+    found = False
+    
+    while not found:
+        possP = random.getrandbits(numBits)    
+        possP |= 2**(numBits-1)
+        possP |= 1
+       
+        found = rm(possP,k)
+        
+    return possP
 
-while not found:
-    possP = random.getrandbits(numBits)    
-    possP |= 2**(numBits-1)
-    possP |= 1
-   
-    found = rm(possP)
-    print(possP, found)
+def main():
+    numBits = 256
+    k = 5
+    
+    p = getPrime(numBits, k)
+    print(p)
+
+if __name__ == "__main__":
+   main()
+
+
 
