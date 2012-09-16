@@ -1,0 +1,7 @@
+\usepackage{ifthen}
+
+%...
+
+\newboolean{show_todo}
+\setboolean{show_todo}{true}
+\newcommand{\todo}[1]{\ifthenelse{\boolean{show_todo}}{\textbf{\textsc{\textcolor{red}{(TODO: #1)\\}}}}{}}
