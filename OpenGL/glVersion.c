@@ -1,3 +1,5 @@
+//gcc ./glVersion.c -o ./glVersion -l glut
+
 #include <stdio.h>
 #include <GL/freeglut.h>
 
